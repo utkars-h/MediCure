@@ -4,7 +4,7 @@ import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import axios from 'axios'
 
-const ProductScreen = ({}) => {
+const ProductScreen = () => {
     const [product, setProduct] = useState({})  //Empty Object
     const { id } = useParams()          //new react-dom version
  
