@@ -1,12 +1,11 @@
-# ProShop eCommerce Platform
+# MediCure eCommerce Platform
 
-> eCommerce platform built with the MERN stack & Redux.
+> eCommerce platform for medicines built with the MERN stack & Redux.
 
 ## Features
 
 - Full featured shopping cart
 - Product reviews and ratings
-- Top products carousel
 - Product pagination
 - Product search feature
 - User profile with orders
@@ -94,3 +93,9 @@ john@example.com (Customer)
 jane@example.com (Customer)
 123456
 ```
+
+### Other Contributors:
+
+Sangaja Patel
+Sanjuli Trivedi
+Sanit Roy
