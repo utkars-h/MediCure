@@ -9,7 +9,7 @@ import userRoutes from './routes/userRoutes.js'
 
 //Middleware
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
-
+//var express = require("express");
 const app = express()
 
 dotenv.config()

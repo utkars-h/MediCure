@@ -22,7 +22,10 @@
     "express": "^4.17.3",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.6"
+    "mongoose": "^6.2.6",
+    "react-bootstrap": "^2.2.1",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",
