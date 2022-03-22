@@ -29,5 +29,5 @@ app.use('/api/orders', orderRoutes)
 app.use(notFound)
 app.use(errorHandler)
 
-const PORT = process.env.PORT || 5009
+const PORT = process.env.PORT || 50011
 app.listen(PORT , console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`.magenta.bold))
