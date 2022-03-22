@@ -10,7 +10,7 @@ import orderRoutes from './routes/orderRoutes.js'
 
 //Middleware
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
-//var express = require("express");
+
 const app = express()
 
 dotenv.config()
@@ -29,5 +29,5 @@ app.use('/api/orders', orderRoutes)
 app.use(notFound)
 app.use(errorHandler)
 
-const PORT = process.env.PORT || 50011
+const PORT = process.env.PORT || 5000
 app.listen(PORT , console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`.magenta.bold))
