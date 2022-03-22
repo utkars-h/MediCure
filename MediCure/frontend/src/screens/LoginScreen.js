@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useLocation, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
@@ -12,8 +12,7 @@ const LoginScreen = ({location, history}) => {
   const [password, setPassword] = useState('')
 
   const dispatch = useDispatch()
-  //const location = useLocation()
- // let history = useHistory()
+
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, error, userInfo } = userLogin
 

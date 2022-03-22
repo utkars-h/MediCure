@@ -32,7 +32,7 @@ const initialState = {
         cartItems: cartItemsFromStorage,
         shippingAddress: shippingAddressFromStorage,
       },
-    userLogin : {userInfo: userInfoFromStorage},
+    userLogin : { userInfo: userInfoFromStorage },
 }
 
 const middleware = [thunk]
