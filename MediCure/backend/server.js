@@ -33,5 +33,5 @@ app.get('/api/config/paypal', (req, res) =>
 app.use(notFound)
 app.use(errorHandler)
 
-const PORT = process.env.PORT || 50011
+const PORT = process.env.PORT || 5010
 app.listen(PORT , console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`.magenta.bold))
