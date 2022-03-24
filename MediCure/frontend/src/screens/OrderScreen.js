@@ -4,8 +4,10 @@ import { PayPalButton } from 'react-paypal-button-v2'
 import { Link } from 'react-router-dom'
 import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+
 import Message from '../components/Message'
 import Loader from '../components/Loader'
+
 import { getOrderDetails, payOrder } from '../actions/orderActions'
 import { ORDER_PAY_RESET } from '../constants/orderConstants'
 
@@ -34,6 +36,10 @@ const OrderScreen = ({ match }) => {
   }
 
   useEffect(() => {
+    if(!order || order._id !== orderId) {
+      dispatch(getOrderDetails(orderId))
+    }
+    
     const addPayPalScript = async () => {
         const { data: clientId } = await axios.get('/api/config/paypal')
         const script = document.createElement('script')
@@ -132,7 +138,7 @@ const OrderScreen = ({ match }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -151,25 +157,25 @@ const OrderScreen = ({ match }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>${order.itemsPrice}</Col>
+                  <Col>₹{order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>${order.shippingPrice}</Col>
+                  <Col>₹{order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
-                  <Col>${order.taxPrice}</Col>
+                  <Col>₹{order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>${order.totalPrice}</Col>
+                  <Col>₹{order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (
