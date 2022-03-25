@@ -37,7 +37,7 @@ const productSchema = mongoose.Schema({
     },
     usage: {
         type: String,
-        required: true
+        required: false
     },
     category: {
         type: String,
@@ -49,7 +49,7 @@ const productSchema = mongoose.Schema({
     },
     uPPS: {
         type: String,
-        required: true
+        required: false
     },
 
     reviews:[reviewSchema],
