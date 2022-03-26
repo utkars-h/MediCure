@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import FormContainer from '../components/FormContainer'
+
 import { listProductDetails, updateProduct } from '../actions/productActions'
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
@@ -16,6 +18,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
   const [brand, setBrand] = useState('')
+  const [usage, setUsage] = useState('')
   const [category, setCategory] = useState('')
   const [countInStock, setCountInStock] = useState(0)
   const [description, setDescription] = useState('')
@@ -46,6 +49,8 @@ const ProductEditScreen = ({ match, history }) => {
             setPrice(product.price)
             setImage(product.image)
             setBrand(product.brand)
+            setUsage(product.usage)
+            setUPPS(product.uPPS)
             setCategory(product.category)
             setCountInStock(product.countInSock)
             setDescription(product.description)
@@ -79,7 +84,6 @@ const ProductEditScreen = ({ match, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    // UPDATE PRODUCT
     dispatch(
         updateProduct({
           _id: productId,
@@ -87,6 +91,8 @@ const ProductEditScreen = ({ match, history }) => {
           price,
           image,
           brand,
+          usage,
+          uPPS,
           category,
           description,
           countInStock,
@@ -153,6 +159,26 @@ const ProductEditScreen = ({ match, history }) => {
                 placeholder='Enter brand'
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='usage'>
+              <Form.Label>Usage</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter usage'
+                value={usage}
+                onChange={(e) => setUsage(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='uPPS'>
+              <Form.Label>uPPS</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter uPPS'
+                value={uPPS}
+                onChange={(e) => setUPPS(e.target.value)}
               ></Form.Control>
             </Form.Group>
 

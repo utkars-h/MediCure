@@ -3,14 +3,14 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
-import SearchBox from './SearchBox'
-// import { Link } from 'react-router-dom'
-import { logout } from '../actions/userActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
 import { faCapsules } from '@fortawesome/free-solid-svg-icons'
 import { faTruck } from '@fortawesome/free-solid-svg-icons'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+
+import SearchBox from './SearchBox'
+import { logout } from '../actions/userActions'
 
 const Header = () => {
   const dispatch = useDispatch()

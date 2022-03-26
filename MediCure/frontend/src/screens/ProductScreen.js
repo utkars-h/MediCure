@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
+
 import Rating from '../components/Rating'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Meta from '../components/Meta'
+
 import {
   listProductDetails,
   createProductReview,
@@ -30,7 +32,6 @@ const ProductScreen = ({ history, match }) => {
     success: successProductReview,
     error: errorProductReview,
   } = productReviewCreate
-
 
   useEffect(() => {
     if (successProductReview) {
@@ -82,7 +83,7 @@ const ProductScreen = ({ history, match }) => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Price: ₹{product.price}</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
@@ -95,7 +96,7 @@ const ProductScreen = ({ history, match }) => {
                     <Row>
                       <Col>Price:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>₹{product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -176,8 +177,8 @@ const ProductScreen = ({ history, match }) => {
                           <option value=''>Select...</option>
                           <option value='1'>1 - Poor</option>
                           <option value='2'>2 - Fair</option>
-                          <option value='3'>3 - Good</option>
-                          <option value='4'>4 - Very Good</option>
+                          <option value='3'>3 - Effective</option>
+                          <option value='4'>4 - Very Effective</option>
                           <option value='5'>5 - Excellent</option>
                         </Form.Control>
                       </Form.Group>

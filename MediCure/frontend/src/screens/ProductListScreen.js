@@ -2,9 +2,11 @@ import React, { useEffect } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -13,7 +15,7 @@ import {
     deleteProduct,
     createProduct,
   } from '../actions/productActions'
-  import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
+import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 
 const ProductListScreen = ({ history, match }) => {
   const pageNumber = match.params.pageNumber || 1
@@ -49,10 +51,10 @@ const ProductListScreen = ({ history, match }) => {
 
     if (successCreate) {
         history.push(`/admin/product/${createdProduct._id}/edit`)
-      } else {
+    } else {
         dispatch(listProducts('', pageNumber))
-      }
-    }, [
+    }
+  }, [
       dispatch,
       history,
       userInfo,
@@ -60,12 +62,11 @@ const ProductListScreen = ({ history, match }) => {
       successCreate,
       createdProduct,
       pageNumber,
-    ])
+  ])
   
 
   const deleteHandler = (id) => {
-    if (window.confirm('Are you sure')) {
-      // DELETE PRODUCTS
+    if (window.confirm('Are you sure?')) {
       dispatch(deleteProduct(id))
     }
   }
@@ -112,7 +113,7 @@ const ProductListScreen = ({ history, match }) => {
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
-                  <td>${product.price}</td>
+                  <td>₹{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
                   <td>

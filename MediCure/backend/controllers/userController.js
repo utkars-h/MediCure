@@ -105,7 +105,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     }
   })
   
-  // @desc    Get all users
+// @desc    Get all users
 // @route   GET /api/users
 // @access  Private/Admin
 const getUsers = asyncHandler(async (req, res) => {
@@ -113,7 +113,7 @@ const getUsers = asyncHandler(async (req, res) => {
     res.json(users)
   })
   
- // @desc    Delete user
+// @desc    Delete user
 // @route   DELETE /api/users/:id
 // @access  Private/Admin
 const deleteUser = asyncHandler(async (req, res) => {
