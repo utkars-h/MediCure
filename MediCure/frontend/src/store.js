@@ -6,7 +6,7 @@ import { productListReducer, productDetailsReducer,  productDeleteReducer,  prod
 import { cartReducer } from './reducers/cartReducers.js'
 import { userLoginReducer, userRegisterReducer,userDetailsReducer,
     userUpdateProfileReducer, userListReducer,   userDeleteReducer, userUpdateReducer} from './reducers/userReducers.js'
-    import {
+import {
       orderCreateReducer,
       orderDetailsReducer,
       orderPayReducer,
