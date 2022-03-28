@@ -3,6 +3,9 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faTrash, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
+
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 
@@ -63,15 +66,15 @@ const UserListScreen = ({history}) => {
                 </td>
                 <td>
                   {user.isAdmin ? (
-                    <i className='fas fa-check' style={{ color: 'green' }}></i>
+                    <FontAwesomeIcon icon={faCheck} style={{ color: 'green' }}></FontAwesomeIcon>
                   ) : (
-                    <i className='fas fa-times' style={{ color: 'red' }}></i>
+                    <FontAwesomeIcon icon={faTimes} style={{ color: 'red' }}></FontAwesomeIcon>
                   )}
                 </td>
                 <td>
                   <LinkContainer to={`/admin/user/${user._id}/edit`}>
                     <Button variant='light' className='btn-sm'>
-                      <i className='fas fa-edit'></i>
+                      <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
                     </Button>
                   </LinkContainer>
                   <Button
@@ -79,7 +82,7 @@ const UserListScreen = ({history}) => {
                     className='btn-sm'
                     onClick={() => deleteHandler(user._id)}
                   >
-                    <i className='fas fa-trash'></i>
+                    <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
                   </Button>
                 </td>
               </tr>

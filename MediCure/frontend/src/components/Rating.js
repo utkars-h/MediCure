@@ -1,68 +1,71 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faTrash, faStar, faStarHalfAlt, f005 } from '@fortawesome/free-solid-svg-icons'
+
 
 const Rating = ({ value, text, color }) => {
   return (
-    <div className='rating'>
+    <div icon='rating'>
       <span>
-        <i
+        <FontAwesomeIcon
           style={{ color }}
-          className={
+          icon={
             value>= 1
-              ? 'fas fa-star'
+              ? {faStar}
               : value >= 0.5
-              ? 'fas fa-star-half-alt'
-              : 'far fa-star'
+              ? {faStarHalfAlt}
+              : "fa-regular fa-star"
           }
-        ></i>
+        ></FontAwesomeIcon>
       </span>
       <span>
-        <i
+        <FontAwesomeIcon
           style={{ color }}
-          className={
+          icon={
             value>= 2
-              ? 'fas fa-star'
+              ? {faStar}
               : value >= 1.5
-              ? 'fas fa-star-half-alt'
-              : 'far fa-star'
+              ? {faStarHalfAlt}
+              : "fa-regular fa-star"
           }
-        ></i>
+        ></FontAwesomeIcon>
       </span>
       <span>
-        <i
+        <FontAwesomeIcon
           style={{ color }}
-          className={
+          icon={
             value>= 3
-              ? 'fas fa-star'
+              ? {faStar}
               : value >= 2.5
-              ? 'fas fa-star-half-alt'
-              : 'far fa-star'
+              ? {faStarHalfAlt}
+              : "fa-regular fa-star"
           }
-        ></i>
+        ></FontAwesomeIcon>
       </span>
       <span>
-        <i
+        <FontAwesomeIcon
           style={{ color }}
-          className={
+          icon={
             value >= 4
-              ? 'fas fa-star'
+              ? {faStar}
               : value >= 3.5
-              ? 'fas fa-star-half-alt'
-              : 'far fa-star'
+              ? {faStarHalfAlt}
+              : 'fa-regular fa-star'
           }
-        ></i>
+        ></FontAwesomeIcon>
       </span>
       <span>
-        <i
+        <FontAwesomeIcon
           style={{ color }}
-          className={
+          icon={
             value >= 5
-              ? 'fas fa-star'
+              ? {faStar}
               : value >= 4.5
-              ? 'fas fa-star-half-alt'
-              : 'far fa-star'
+              ? {faStarHalfAlt}
+              : 'fa-regular fa-star'
           }
-        ></i>
+        ></FontAwesomeIcon>
       </span>
       <span>{text && text}</span>
     </div>

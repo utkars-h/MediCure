@@ -8,7 +8,7 @@ import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import {
     listProducts,
@@ -83,7 +83,7 @@ const ProductListScreen = ({ history, match }) => {
         </Col>
         <Col className='text-right'>
           <Button className='my-3' onClick={createProductHandler}>
-            <i className='fas fa-plus'></i> Create Product
+          <FontAwesomeIcon icon={faPlus} /> Create Product
           </Button>
         </Col>
       </Row>
