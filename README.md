@@ -14,7 +14,7 @@
 - Admin Order details page
 - Mark orders as delivered option
 - Checkout process (shipping, payment method, etc)
-- PayPal / credit card integration
+- PayPal / Debit card integration
 - Database seeder (products & users)
 
 ## Usage
@@ -33,8 +33,8 @@ Create a .env file in then root and add the following
 
 ```
 NODE_ENV = development
-PORT = 50011
-MONGO_URI = your mongodb uri
+PORT = 5000
+MONGO_URI = Your mongodb uri
 JWT_SECRET = 'abc123'
 PAYPAL_CLIENT_ID = your paypal client id
 ```
@@ -45,14 +45,13 @@ PAYPAL_CLIENT_ID = your paypal client id
 npm install
 cd frontend
 npm install
-cd frontend
-npm install
+
 ```
 
 ### Run
 
 ```
-# Run frontend (:3000) & backend (:50011)
+# Run frontend (:3000) & backend (:5000)
 npm run dev
 
 # Run backend only
@@ -84,18 +83,20 @@ npm run data:destroy
 ```
 Sample User Logins
 
-admin@example.com (Admin)
-123456
+utkarsh@gmail.com (Admin)
+12345
 
-john@example.com (Customer)
-123456
+sanjuli@gmail.com (Customer)
+12345
 
-jane@example.com (Customer)
-123456
+sanit@gmail.com (Customer)
+12345
 ```
 
 ### Other Contributors:
 
 Sangaja Patel
+
 Sanjuli Trivedi
+
 Sanit Roy
