@@ -82,13 +82,13 @@ npm run data:destroy
 ```
 Sample User Logins
 
-utkarsh@gmail.com (Admin)
+utkarsh@iiitg.ac.in (Admin)
 12345
 
-sanjuli@gmail.com (Customer)
+sanjuli@iiitg.ac.in (Customer)
 12345
 
-sanit@gmail.com (Customer)
+sanit@iiitg.ac.in (Customer)
 12345
 ```
 
