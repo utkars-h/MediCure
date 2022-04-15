@@ -45,7 +45,6 @@ PAYPAL_CLIENT_ID = your paypal client id
 npm install
 cd frontend
 npm install
-
 ```
 
 ### Run
